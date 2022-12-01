@@ -1,96 +1,292 @@
-/* REGOLE DI DEFAULT */
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-  }
-  /* IMP CONTAINER + no overflow + VH per occupare tutto lo spazio*/
-  .container {
-    width: 100%;
-    height: 100vh;
-    background-color: yellow;
-    overflow: hidden;
-  }
-  /* RED STATS flex e fixed */
-  main {
-    display: flex;
-    height: calc(100% - 90px);
-  }
-  footer {
-    width: 100%;
-    height: 90px;
-    position: fixed;
-    bottom:0;
-    left: 0;
-    background-color: orange;
-    display: flex;
-  }
-  /* COLORI SFONDI */
-  .bgcb {
-    background-color: blue;
-  }
-  .bgcr {
-    background-color: red;
-  }
-  .bgcg {
-    background-color: green;
-  }
-  /* NAV SX  OVERFLOW Y*/
-  .main-nav-body {
-    flex-grow: 2;
-    min-height: 300px;
-    overflow-y: auto;
-  }
-  /* FLEX COLONNA */
-  .main-nav {
-    width: 300px;
-    height: 100%;
-    background-color: coral;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-  }
-  /* PARTE DX */
-  .main-libreria {
-    width: calc(100% - 300px);
-    height: 100%;
-    padding-top: 90px;
-    background-color: blue;
-    overflow-y: scroll;
-  }
-  .top {
-    position: fixed;
-    top:0;
-    right:0;
-    z-index: 1;
-    background-color: darkblue;
-    width: calc(100% - 300px);
-    height: 90px;
-    line-height: 90px;
-    text-align: right;
-  }
-  .navbar li{
-    display: inline;
-  }
-  /* BTN + A */
-  .btn {
-    padding: 10px 30px;
-    border-radius: 20px;
-    border: 2px solid white;
-  }
-  a.btn {
-    color: white;
-    font-size: 15px;
-    text-transform: uppercase;
-    text-decoration: none;
-  }
-  /* FOOTER */
-  .foot{
-    flex-direction: row;
-    justify-content: space-between;
-  }
-  .box{
-    height: 90px;
-    width: 90px;
-    background-color: brown;
-  }
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.fl{
+  float: left;
+}
+
+.fr{
+  float:right;
+}
+
+footer{
+  height: 100px;
+  background-color: rgb(50, 51, 49);
+}
+
+main{
+  height: calc(100% - 100px);
+}
+
+.container{
+  width: 100%;
+  height: 100vh;
+}
+
+.clearfix::after{
+  content: "";
+  display: table;
+  clear: both;
+}
+
+#nav-bar{
+  width: 200px;
+  height: 100%;
+  background-color: black;
+  overflow: auto;
+}
+
+#main-section{
+  width: calc(100% - 200px);
+  height: 100%;
+  background-color: rgba(14, 14, 37, 0.829);
+  overflow: auto;
+}
+
+#upgrade-banner{
+  height: 100px;
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.719);
+  position: fixed;
+  z-index: 1001;
+}
+
+#button-upgrade{
+  position: absolute;
+  right: 20%;
+  top: 40%;
+  
+  text-transform: uppercase;
+  border: 1px solid white;
+  border-radius: 50px;
+  padding: 5px 25px;
+
+  font-size: 0.7em;
+  font-family: 'Open Sans', sans-serif;
+}
+
+.color-white{
+  color: white;
+}
+
+.img-sinister{
+  height: 50px;
+  width: 50px;
+}
+.font{
+  font-family: 'Open Sans', sans-serif;
+  font-size: 00.8em;
+}
+
+.grey {
+  color: gray;
+  font-family: 'Open Sans', sans-serif;
+  font-size: 00.7em;
+}
+
+.header-bottom{
+  margin-top: 200px;
+}
+
+.upper-bar{
+  padding: 10px;
+  line-height: 2;
+}
+
+ul{
+  list-style-type: none;
+  display: flex;
+  flex-direction: column;
+}
+
+ul>li a {
+  display: inline-block;
+  flex-grow: 1;
+  color: white;
+  text-decoration: none;
+}
+
+.fas.fa-home{
+  color: white;
+}
+
+.uppercase{
+  text-transform: uppercase;
+  font-family: 'Open Sans', sans-serif;
+}
+
+nav.podcast li{
+  display: inline;
+  margin-left: 10px;
+}
+
+.podcast{
+  position: absolute;
+  top: 20%;
+  right: 20%;
+}
+
+.flex-container{
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.flex-item{
+  flex: 0 0 150px;
+  height: 150px;
+  margin-left: 10px;
+}
+
+.video{
+  height: 150px;
+  width: 150px;
+  background-size: cover;
+}
+
+.play-video{
+  position: relative;
+  height: 150px;
+  width: 150px; 
+}
+
+.play-video .fa-play-circle{
+  display: none;
+
+  font-size: 5em;
+  color: white;
+
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.video:hover .play-video .fa-play-circle{
+  display: block;
+}
+
+.video:hover .play-video.metal{
+  background-image: 
+  linear-gradient(rgba(0,0,0,.4), rgba(0,0,0,.4)),
+  url(../img/metal_lifting.jpg);
+}
+
+.video:hover .play-video.stranger{
+  background-image: 
+  linear-gradient(rgba(0,0,0,.4), rgba(0,0,0,.4)),
+  url(../img/stranger.jpeg);
+}
+
+.video:hover .play-video.quiet-place{
+  background-image: 
+  linear-gradient(rgba(0,0,0,.4), rgba(0,0,0,.4)),
+  url(../img/aquietplace.jpeg);
+}
+
+.video:hover .play-video.split{
+  background-image: 
+  linear-gradient(rgba(0,0,0,.4), rgba(0,0,0,.4)),
+  url(../img/split.jpeg);
+}
+
+.video:hover .play-video.cure{
+  background-image: 
+  linear-gradient(rgba(0,0,0,.4), rgba(0,0,0,.4)),
+  url(../img/cure.jpeg);
+}
+
+.video:hover .play-video.sinister{
+  background-image: 
+  linear-gradient(rgba(0,0,0,.4), rgba(0,0,0,.4)),
+  url(../img/sinister.jpeg);
+}
+
+.video:hover .play-video.radar{
+  background-image: 
+  linear-gradient(rgba(0,0,0,.4), rgba(0,0,0,.4)),
+  url(../img/radar.jpeg);
+}
+
+.video:hover .play-video.daily-mix{
+  background-image: 
+  linear-gradient(rgba(0,0,0,.4), rgba(0,0,0,.4)),
+  url(../img/mixdaily.jpeg);
+}
+
+.metal{
+  background-image: url(../img/metal_lifting.jpg);
+  background-size: cover;
+}
+
+.stranger{
+  background-image: url(../img/stranger.jpeg);
+  background-size: cover;
+}
+
+.quiet-place{
+  background-image: url(../img/aquietplace.jpeg);
+  background-size: cover;
+}
+
+.split{
+  background-image: url(../img/split.jpeg);
+  background-size: cover;
+}
+
+.cure{
+  background-image: url(../img/cure.jpeg);
+  background-size: cover;
+}
+
+.sinister{
+  background-image: url(../img/sinister.jpeg);
+  background-size: cover;
+}
+
+.radar{
+  background-image: url(../img/radar.jpeg);
+  background-size: cover;
+}
+
+.daily-mix{
+  background-image: url(../img/mixdaily.jpeg);
+  background-size: cover;
+}
+
+.description{
+  height: 40px;
+  width: 150px;
+  text-align: center;
+  padding-top: 5px;
+}
+
+section.song-list h1{
+  margin-top: 140px;
+  margin-bottom: 20px;
+  margin-left: 10px;
+}
+
+.font-family{
+  font-family: 'Open Sans', sans-serif;
+}
+
+section.centre-footer{
+  position: absolute;
+  left: 50%;
+
+  color: white;
+}
+
+.progress-bar{
+  width: 200px;
+  height: 0;
+  border: 1px solid white;
+}
+
+#progress-bar-minute{
+  display: flex;
+  justify-content: space-around;
+}
